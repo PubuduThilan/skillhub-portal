@@ -5,8 +5,6 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 import java.io.File;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     private static final int SERVER_PORT = 8080;
     private static final String CONTEXT_PATH = "/SkillHub";
@@ -20,7 +18,6 @@ public class Main {
 
             Context context = tomcat.addWebapp(CONTEXT_PATH, new File("src/main/webapp").getAbsolutePath());
             Tomcat.addServlet(context,"JerseyServlet", new ServletContainer());
-//            context.addServletMappingDecoded("/portal/*", "JerseyServlet");
 
             tomcat.start();
             System.out.println("App URL: http://localhost:"+SERVER_PORT+CONTEXT_PATH);

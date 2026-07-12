@@ -1,5 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+    com.duskdev.skillhub.model.User user = (com.duskdev.skillhub.model.User) session.getAttribute("user");
+
+    boolean isAdmin = user != null && "ADMIN".equals(user.getRole());
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,10 +110,10 @@
 
     <h2>SkillHub Training Portal</h2>
 
-
-        <a href="<%= request.getContextPath() %>/portal/courses">
-            Courses
-        </a>
+    <% if (isAdmin) { %>
+    <a href="<%= request.getContextPath() %>/portal/courses">
+        Courses
+    </a>
 
     <a href="<%= request.getContextPath() %>/portal/students">
         Students
@@ -125,9 +131,10 @@
         Attendance
     </a>
 
-        <a href="<%= request.getContextPath() %>/logout">
-            Logout
-        </a>
+    <a href="<%= request.getContextPath() %>/logout">
+        Logout
+    </a>
+    <% } %>
 </nav>
 
 <main class="container">
