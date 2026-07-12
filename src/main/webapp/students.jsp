@@ -154,6 +154,10 @@
             Enrollments
         </a>
 
+        <a href="<%= request.getContextPath() %>/portal/attendance">
+            Attendance
+        </a>
+
         <a href="<%= request.getContextPath() %>/logout">
             Logout
         </a>

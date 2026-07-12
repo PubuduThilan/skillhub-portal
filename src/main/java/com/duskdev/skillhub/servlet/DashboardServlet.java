@@ -35,6 +35,11 @@ public class DashboardServlet extends HttpServlet {
         );
 
         request.setAttribute(
+                "attendanceCount",
+                getListSize(context.getAttribute("attendances"))
+        );
+
+        request.setAttribute(
                 "applicationStartTime",
                 context.getAttribute("applicationStartTime")
         );

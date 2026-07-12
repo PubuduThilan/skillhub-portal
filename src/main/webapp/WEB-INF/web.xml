@@ -97,6 +97,16 @@
         <url-pattern>/portal/enrollments</url-pattern>
     </servlet-mapping>
     
+<!--    Attendance Servlet-->
+    <servlet>
+        <servlet-name>AttendanceServlet</servlet-name>
+        <servlet-class>com.duskdev.skillhub.servlet.AttendanceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AttendanceServlet</servlet-name>
+        <url-pattern>/portal/attendance</url-pattern>
+    </servlet-mapping>
+    
     <!--    Session Configuration-->
     <session-config>
         <session-timeout>30</session-timeout>

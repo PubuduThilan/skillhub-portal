@@ -99,10 +99,9 @@ public class AppContextListener implements ServletContextListener {
 
         context.setAttribute("enrollments", enrollments);
 
-        context.setAttribute(
-                "attendanceRecords",
-                Collections.synchronizedList(new ArrayList<>())
-        );
+        List<Attendance> attendances = Collections.synchronizedList(new ArrayList<>());
+
+        context.setAttribute( "attendances",attendances);
 
         context.setAttribute(
                 "applicationStartTime",

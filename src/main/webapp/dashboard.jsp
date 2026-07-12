@@ -121,6 +121,10 @@
         Enrollments
     </a>
 
+    <a href="<%= request.getContextPath() %>/portal/attendance">
+        Attendance
+    </a>
+
         <a href="<%= request.getContextPath() %>/logout">
             Logout
         </a>
@@ -166,6 +170,11 @@
         <div class="card">
             <h3>Total Enrolments</h3>
             <div class="count">${enrollmentCount}</div>
+        </div>
+
+        <div class="card">
+            <h3>Total Attendance Records</h3>
+            <div class="count">${attendanceCount}</div>
         </div>
 
     </section>
