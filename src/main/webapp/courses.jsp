@@ -145,6 +145,14 @@
             Students
         </a>
 
+        <a href="<%= request.getContextPath() %>/portal/trainers">
+            Trainers
+        </a>
+
+        <a href="<%= request.getContextPath() %>/portal/enrollments">
+            Enrollments
+        </a>
+
         <a href="<%= request.getContextPath() %>/logout">
             Logout
         </a>

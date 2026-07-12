@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.duskdev.skillhub.model.Student" %>
+<%@ page import="com.duskdev.skillhub.model.Trainer" %>
 
 <%
-    List<com.duskdev.skillhub.model.Student> students =
-            (List<Student>) request.getAttribute("students");
+    List<com.duskdev.skillhub.model.Trainer> trainers =
+            (List<Trainer>) request.getAttribute("trainers");
 
     String error =
             (String) request.getAttribute("error");
@@ -12,13 +12,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Student Management</title>
+    <title>Trainer Management</title>
 
     <style>
         * {
@@ -163,13 +164,13 @@
 
 <main class="container">
 
-    <h1>Student Management</h1>
+    <h1>Trainer Management</h1>
 
     <div class="grid">
 
         <section class="panel">
 
-            <h2>Add New Student</h2>
+            <h2>Add New Trainer</h2>
 
             <% if (error != null) { %>
 
@@ -180,45 +181,60 @@
             <% } %>
 
             <form method="post"
-                  action="<%= request.getContextPath() %>/portal/students">
+                  action="<%= request.getContextPath() %>/portal/trainers">
 
                 <div class="form-group">
-                    <label for="fullName">Full Name</label>
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
 
                     <input type="text"
                            id="fullName"
                            name="fullName"
                            required>
+
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+
+                    <label for="email">
+                        Email Address
+                    </label>
 
                     <input type="email"
                            id="email"
                            name="email"
                            required>
+
                 </div>
 
                 <div class="form-group">
-                    <label for="mobile">Mobile Number</label>
+
+                    <label for="mobile">
+                        Phone Number
+                    </label>
 
                     <input type="text"
                            id="mobile"
                            name="mobile"
                            placeholder="Example: 0771234567"
                            required>
+
                 </div>
 
                 <div class="form-group">
-                    <label for="course">Course</label>
 
-                    <select id="course"
-                            name="course"
+                    <label for="specialization">
+                        Specialization
+                    </label>
+
+                    <select id="specialization"
+                            name="specialization"
                             required>
 
                         <option value="">
-                            Select Course
+                            Select Specialization
                         </option>
 
                         <option value="Java Web Development">
@@ -233,11 +249,16 @@
                             Professional Development
                         </option>
 
+                        <option value="Project Management">
+                            Project Management
+                        </option>
+
                     </select>
+
                 </div>
 
                 <button type="submit">
-                    Add Student
+                    Add Trainer
                 </button>
 
             </form>
@@ -246,7 +267,7 @@
 
         <section class="panel">
 
-            <h2>Registered Students</h2>
+            <h2>Registered Trainers</h2>
 
             <table>
 
@@ -255,23 +276,36 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Mobile</th>
-                    <th>Course</th>
+                    <th>Phone</th>
+                    <th>Specialization</th>
                 </tr>
                 </thead>
 
                 <tbody>
 
-                <% if (students != null && !students.isEmpty()) { %>
+                <% if (trainers != null
+                        && !trainers.isEmpty()) { %>
 
-                <% for (Student student : students) { %>
+                <% for (Trainer trainer : trainers) { %>
 
                 <tr>
-                    <td><%= student.getId() %></td>
-                    <td><%= student.getFullName() %></td>
-                    <td><%= student.getEmail() %></td>
-                    <td><%= student.getMobile() %></td>
-                    <td><%= student.getCourse() %></td>
+                    <td><%= trainer.getId() %></td>
+
+                    <td>
+                        <%= trainer.getFullName() %>
+                    </td>
+
+                    <td>
+                        <%= trainer.getEmail() %>
+                    </td>
+
+                    <td>
+                        <%= trainer.getMobile() %>
+                    </td>
+
+                    <td>
+                        <%= trainer.getSpecialization() %>
+                    </td>
                 </tr>
 
                 <% } %>
@@ -280,7 +314,7 @@
 
                 <tr>
                     <td colspan="5">
-                        No students are registered.
+                        No trainers are registered.
                     </td>
                 </tr>
 

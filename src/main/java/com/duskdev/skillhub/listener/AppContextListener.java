@@ -1,8 +1,6 @@
 package com.duskdev.skillhub.listener;
 
-import com.duskdev.skillhub.model.Course;
-import com.duskdev.skillhub.model.Student;
-import com.duskdev.skillhub.model.User;
+import com.duskdev.skillhub.model.*;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -76,15 +74,30 @@ public class AppContextListener implements ServletContextListener {
 
         context.setAttribute("students",students);
 
-        context.setAttribute(
-                "trainers",
-                Collections.synchronizedList(new ArrayList<>())
-        );
+        List<Trainer> trainers = Collections.synchronizedList(new ArrayList<>());
 
-        context.setAttribute(
-                "enrollments",
-                Collections.synchronizedList(new ArrayList<>())
-        );
+        trainers.add(new Trainer(
+                1,
+                "Tharka Sankalpa",
+                "tharaka@gmail.com",
+                "0771112233",
+                "Java Web Development"
+
+        ));
+
+        trainers.add(new Trainer(
+                2,
+                "Chathurika Sirivardana",
+                "chaturanga@gmail.com",
+                "0714455667",
+                "Business Management"
+        ));
+
+        context.setAttribute("trainers", trainers);
+
+        List<Enrollment> enrollments = Collections.synchronizedList(new ArrayList<>());
+
+        context.setAttribute("enrollments", enrollments);
 
         context.setAttribute(
                 "attendanceRecords",

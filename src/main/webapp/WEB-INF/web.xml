@@ -56,8 +56,8 @@
         <servlet-name>DashboardServlet</servlet-name>
         <url-pattern>/portal/dashboard</url-pattern>
     </servlet-mapping>
-    
-<!--    Course Servlet-->
+
+    <!--    Course Servlet-->
     <servlet>
         <servlet-name>CourseServlet</servlet-name>
         <servlet-class>com.duskdev.skillhub.servlet.CourseServlet</servlet-class>
@@ -66,8 +66,8 @@
         <servlet-name>CourseServlet</servlet-name>
         <url-pattern>/portal/courses</url-pattern>
     </servlet-mapping>
-    
-<!--    Student Servlet-->
+
+    <!--    Student Servlet-->
     <servlet>
         <servlet-name>StudentServlet</servlet-name>
         <servlet-class>com.duskdev.skillhub.servlet.StudentServlet</servlet-class>
@@ -75,6 +75,26 @@
     <servlet-mapping>
         <servlet-name>StudentServlet</servlet-name>
         <url-pattern>/portal/students</url-pattern>
+    </servlet-mapping>
+
+    <!--    Trainer Servlet-->
+    <servlet>
+        <servlet-name>TranerServlet</servlet-name>
+        <servlet-class>com.duskdev.skillhub.servlet.TrainerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TranerServlet</servlet-name>
+        <url-pattern>/portal/trainers</url-pattern>
+    </servlet-mapping>
+
+<!--    Enrollment Servlet-->
+    <servlet>
+        <servlet-name>EnrollmentServlet</servlet-name>
+        <servlet-class>com.duskdev.skillhub.servlet.EnrollmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnrollmentServlet</servlet-name>
+        <url-pattern>/portal/enrollments</url-pattern>
     </servlet-mapping>
     
     <!--    Session Configuration-->
