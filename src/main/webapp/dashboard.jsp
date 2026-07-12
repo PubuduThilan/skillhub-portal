@@ -104,10 +104,18 @@
 
     <h2>SkillHub Training Portal</h2>
 
-    <a href="<%= request.getContextPath() %>/logout">
-        Logout
+
+        <a href="<%= request.getContextPath() %>/portal/courses">
+            Courses
+        </a>
+
+    <a href="<%= request.getContextPath() %>/portal/students">
+        Students
     </a>
 
+        <a href="<%= request.getContextPath() %>/logout">
+            Logout
+        </a>
 </nav>
 
 <main class="container">

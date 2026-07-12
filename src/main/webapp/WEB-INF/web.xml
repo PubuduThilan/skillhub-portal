@@ -57,21 +57,41 @@
         <url-pattern>/portal/dashboard</url-pattern>
     </servlet-mapping>
     
-<!--    Session Configuration-->
-<session-config>
-    <session-timeout>30</session-timeout>
+<!--    Course Servlet-->
+    <servlet>
+        <servlet-name>CourseServlet</servlet-name>
+        <servlet-class>com.duskdev.skillhub.servlet.CourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CourseServlet</servlet-name>
+        <url-pattern>/portal/courses</url-pattern>
+    </servlet-mapping>
     
-    <cookie-config>
-        <http-only>true</http-only>
-    </cookie-config>
-</session-config>
+<!--    Student Servlet-->
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.duskdev.skillhub.servlet.StudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/portal/students</url-pattern>
+    </servlet-mapping>
     
-<!--    Login Page-->
+    <!--    Session Configuration-->
+    <session-config>
+        <session-timeout>30</session-timeout>
+
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+
+    <!--    Login Page-->
     <welcome-file-list>
         <welcome-file>login</welcome-file>
     </welcome-file-list>
-    
-<!--    Error Pages-->
+
+    <!--    Error Pages-->
     <error-page>
         <error-code>404</error-code>
         <location>/error.jsp</location>
@@ -81,5 +101,5 @@
         <error-code>500</error-code>
         <location>/error.jsp</location>
     </error-page>
-    
+
 </web-app>

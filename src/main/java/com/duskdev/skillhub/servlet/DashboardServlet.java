@@ -20,7 +20,7 @@ public class DashboardServlet extends HttpServlet {
         );
 
         request.setAttribute(
-                "studentConut",
+                "studentCount",
                 getListSize(context.getAttribute("students"))
         );
 
