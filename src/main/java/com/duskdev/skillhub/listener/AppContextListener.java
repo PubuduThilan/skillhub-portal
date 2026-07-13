@@ -21,14 +21,14 @@ public class AppContextListener implements ServletContextListener {
         users.add(new User(
                 "System Administrator",
                 "admin@skillhub.com",
-                "admin",
+                "admin123",
                 "ADMIN"
                 ));
 
         users.add(new User(
                 "Demo Student",
                 "student@skillhub.com",
-                "student",
+                "student123",
                 "STUDENT"
         ));
 
@@ -48,7 +48,7 @@ public class AppContextListener implements ServletContextListener {
                 2,
                 "Business Management",
                 "Business",
-                "1 Months",
+                "1 Month",
                 "Chathurika Sirivardana"
         ));
 
@@ -61,7 +61,7 @@ public class AppContextListener implements ServletContextListener {
                 "Pubudu Thilan",
                 "pubudu@gmail.com",
                 "0778886665",
-                "Java Web Deveopment"
+                "Java Web Deveකopment"
         ));
 
         students.add(new Student(
@@ -88,7 +88,7 @@ public class AppContextListener implements ServletContextListener {
         trainers.add(new Trainer(
                 2,
                 "Chathurika Sirivardana",
-                "chaturanga@gmail.com",
+                "chathurika@gmail.com",
                 "0714455667",
                 "Business Management"
         ));

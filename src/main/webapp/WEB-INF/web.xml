@@ -25,7 +25,7 @@
         <url-pattern>/portal/*</url-pattern>
     </filter-mapping>
 
-<!--    Authorization Filter-->
+    <!--    Authorization Filter-->
     <filter>
         <filter-name>AuthorizationFilter</filter-name>
         <filter-class>com.duskdev.skillhub.filter.AuthorizationFilter</filter-class>
@@ -113,7 +113,7 @@
         <url-pattern>/portal/trainers</url-pattern>
     </servlet-mapping>
 
-<!--    Enrollment Servlet-->
+    <!--    Enrollment Servlet-->
     <servlet>
         <servlet-name>EnrollmentServlet</servlet-name>
         <servlet-class>com.duskdev.skillhub.servlet.EnrollmentServlet</servlet-class>
@@ -122,8 +122,8 @@
         <servlet-name>EnrollmentServlet</servlet-name>
         <url-pattern>/portal/enrollments</url-pattern>
     </servlet-mapping>
-    
-<!--    Attendance Servlet-->
+
+    <!--    Attendance Servlet-->
     <servlet>
         <servlet-name>AttendanceServlet</servlet-name>
         <servlet-class>com.duskdev.skillhub.servlet.AttendanceServlet</servlet-class>
@@ -133,7 +133,7 @@
         <url-pattern>/portal/attendance</url-pattern>
     </servlet-mapping>
 
-<!--    AccessDenied Servlet-->
+    <!--    AccessDenied Servlet-->
     <servlet>
         <servlet-name>AccessDeniedServlet</servlet-name>
         <servlet-class>com.duskdev.skillhub.servlet.AccessDeniedServlet</servlet-class>
@@ -145,7 +145,7 @@
 
     <!--    Session Configuration-->
     <session-config>
-        <session-timeout>30</session-timeout>
+        <session-timeout>45</session-timeout>
 
         <cookie-config>
             <http-only>true</http-only>
@@ -160,12 +160,12 @@
     <!--    Error Pages-->
     <error-page>
         <error-code>404</error-code>
-        <location>/error.jsp</location>
+        <location>/WEB-INF/view/error.jsp</location>
     </error-page>
 
     <error-page>
         <error-code>500</error-code>
-        <location>/error.jsp</location>
+        <location>/WEB-INF/view/error.jsp</location>
     </error-page>
 
 </web-app>

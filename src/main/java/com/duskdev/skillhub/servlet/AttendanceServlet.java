@@ -25,7 +25,7 @@ public class AttendanceServlet extends HttpServlet {
         request.setAttribute("enrollments", enrollments);
         request.setAttribute("attendances", attendances);
 
-        request.getRequestDispatcher("/attendance.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/attendance.jsp").forward(request, response);
 
     }
 
@@ -128,7 +128,7 @@ public class AttendanceServlet extends HttpServlet {
                 nextId,
                 selectedEnrollment.getId(),
                 selectedEnrollment.getStudentName(),
-                selectedEnrollment.getStudentName(),
+                selectedEnrollment.getCourseName(),
                 attendanceDate,
                 status
         );

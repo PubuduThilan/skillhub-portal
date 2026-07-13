@@ -30,7 +30,7 @@ public class EnrollmentServlet extends HttpServlet {
         request.setAttribute("courses", courses);
         request.setAttribute("enrollments", enrollments);
 
-        request.getRequestDispatcher("/enrollments.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/enrollments.jsp").forward(request, response);
 
     }
 

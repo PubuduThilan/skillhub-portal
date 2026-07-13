@@ -18,7 +18,9 @@ public class AuthenticationFilter implements Filter {
         Filter.super.destroy();
     }
 
+
     @Override
+    @SuppressWarnings("DuplicatedCode")
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;

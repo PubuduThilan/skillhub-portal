@@ -13,156 +13,63 @@
           content="width=device-width, initial-scale=1.0">
 
     <title>SkillHub Login</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f1f5f9;
-        }
-
-        .login-container {
-            width: 420px;
-            background: white;
-            padding: 35px;
-            border-radius: 18px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-
-        .logo h1 {
-            color: #2563eb;
-            margin-bottom: 5px;
-        }
-
-        .logo p {
-            color: #64748b;
-            margin-top: 0;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 7px;
-            color: #334155;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #cbd5e1;
-            border-radius: 9px;
-            font-size: 15px;
-        }
-
-        input:focus {
-            outline: 2px solid #bfdbfe;
-            border-color: #2563eb;
-        }
-
-        button {
-            width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 9px;
-            background: #2563eb;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        .error {
-            padding: 11px;
-            margin-bottom: 17px;
-            border-radius: 8px;
-            color: #991b1b;
-            background: #fee2e2;
-        }
-
-        .demo {
-            margin-top: 20px;
-            padding: 13px;
-            border-radius: 9px;
-            background: #eff6ff;
-            color: #1e3a8a;
-            font-size: 13px;
-            line-height: 1.7;
-        }
-    </style>
+    <link rel="icon" href="<%= request.getContextPath() %>/assets/images/icon.png"/>
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/styles.css"/>
 </head>
 
 <body>
 
-<div class="login-container">
+<main class="container d-flex align-items-center justify-content-center min-vh-100">
 
-    <div class="logo">
-        <h1>SkillHub</h1>
-        <p>Training Management Portal</p>
-    </div>
+    <div class="card login-container shadow-sm border-0">
+        <div class="card-body">
+            <div class="text-center mb-4 p-2">
+                <a class="navbar-brand" href="<%= request.getContextPath() %>/portal/dashboard">
+                    <img src="<%= request.getContextPath() %>/assets/images/logo.png" alt="SkillHub Portal" height="50"
+                         class="d-inline-block align-middle"/>
+                </a>
+                <p class="text-muted mb-0">Training Management Portal</p>
+            </div>
 
-    <% if (error != null) { %>
+            <% if (error != null) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+            <% } %>
 
-    <div class="error">
-        <%= error %>
-    </div>
+            <form method="post" action="<%= request.getContextPath() %>/login">
 
-    <% } %>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter email address" required>
+                </div>
 
-    <form method="post"
-          action="<%= request.getContextPath() %>/login">
+                <div class="mb-3">
+                    <label for="password" class="form-label fw-semibold">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+                </div>
 
-        <div class="form-group">
-            <label for="email">Email Address</label>
+                <button type="submit" class="btn btn-primary w-100">Sign In</button>
 
-            <input type="email"
-                   id="email"
-                   name="email"
-                   placeholder="Enter email address"
-                   required>
+            </form>
+
+            <div class="alert alert-info mt-3 mb-0 small">
+                <strong>Administrator Account</strong><br>
+                Email: admin@skillhub.com<br>
+                Password: admin123
+            </div>
+
+            <div class="alert alert-info mt-3 mb-0 small">
+                <strong>Student Account</strong><br>
+                Email: student@skillhub.com<br>
+                Password: student123
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-
-            <input type="password"
-                   id="password"
-                   name="password"
-                   placeholder="Enter password"
-                   required>
-        </div>
-
-        <button type="submit">Sign In</button>
-
-    </form>
-
-    <div class="demo">
-        <strong>Administrator Account</strong><br>
-        Email: admin@skillhub.lk<br>
-        Password: admin123
     </div>
 
-</div>
+</main>
 
+<script src="<%= request.getContextPath() %>/assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>

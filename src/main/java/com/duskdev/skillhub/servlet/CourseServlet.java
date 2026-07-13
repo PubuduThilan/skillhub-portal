@@ -21,7 +21,7 @@ public class CourseServlet extends HttpServlet {
 
         request.setAttribute("courses", courses);
 
-        request.getRequestDispatcher("/courses.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/courses.jsp").forward(request, response);
 
     }
 

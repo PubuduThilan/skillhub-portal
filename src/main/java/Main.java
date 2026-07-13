@@ -16,8 +16,7 @@ public class Main {
             tomcat.setPort(SERVER_PORT);
             tomcat.getConnector();
 
-            Context context = tomcat.addWebapp(CONTEXT_PATH, new File("src/main/webapp").getAbsolutePath());
-            Tomcat.addServlet(context,"JerseyServlet", new ServletContainer());
+            tomcat.addWebapp(CONTEXT_PATH, new File("src/main/webapp").getAbsolutePath());
 
             tomcat.start();
             System.out.println("App URL: http://localhost:"+SERVER_PORT+CONTEXT_PATH);

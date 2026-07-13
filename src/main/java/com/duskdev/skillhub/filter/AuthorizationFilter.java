@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class AuthorizationFilter implements Filter {
     @Override
+    @SuppressWarnings("DuplicatedCode")
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
