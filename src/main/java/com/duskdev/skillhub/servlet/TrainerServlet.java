@@ -20,7 +20,7 @@ public class TrainerServlet extends HttpServlet {
 
         request.setAttribute("trainers", trainers);
 
-        request.getRequestDispatcher("/trainers.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/trainers.jsp").forward(request,response);
     }
 
     @Override

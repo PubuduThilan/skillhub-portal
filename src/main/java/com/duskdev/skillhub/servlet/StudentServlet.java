@@ -20,7 +20,7 @@ public class StudentServlet extends HttpServlet {
 
         request.setAttribute("students", students);
 
-        request.getRequestDispatcher("/students.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/students.jsp").forward(request, response);
 
     }
 
