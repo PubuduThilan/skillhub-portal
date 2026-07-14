@@ -218,4 +218,4 @@ This project was developed as part of a Web Component Development assessment to 
 
 **Pubudu Thilan**
 
-GitHub: [@pubuduthilan603](https://github.com/pubuduthilan)
+GitHub: [@PubuduThilan](https://github.com/pubuduthilan)
